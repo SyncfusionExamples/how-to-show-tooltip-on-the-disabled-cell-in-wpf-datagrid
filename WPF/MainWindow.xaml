@@ -1,0 +1,45 @@
+﻿<Window x:Class="MasterDetailsViewDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:MasterDetailsViewDemo"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        Title="Customized EnterKey Behavior" Icon="App.ico"
+        Height="710" Width="1024" WindowStartupLocation="CenterScreen">
+
+    <Window.DataContext>
+        <local:ViewModel />
+    </Window.DataContext>
+    
+    <Grid>
+        <syncfusion:SfDataGrid x:Name="dataGrid"
+                               AutoGenerateColumns="False"
+                               ItemsSource="{Binding Path=OrdersDetails}"
+                               ColumnSizer="star" 
+                               ShowToolTip="true">
+            
+            <syncfusion:SfDataGrid.Columns>
+                <syncfusion:GridTextColumn MappingName="OrderID" />
+                <syncfusion:GridTextColumn MappingName="CustomerID" />
+                <syncfusion:GridTextColumn MappingName="ShipCountry" >
+                    <syncfusion:GridTextColumn.CellStyle>
+                        <Style TargetType="syncfusion:GridCell" >
+                            <Setter Property="IsEnabled" Value="False" />
+                            <Setter Property="ToolTip" >
+                                <Setter.Value>
+                                    <TextBlock Text="{Binding ShipCountry}" 
+                                               Foreground="Red" 
+                                               ToolTipService.IsEnabled="True" 
+                                               ToolTipService.ShowOnDisabled="True"/>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="ToolTipService.IsEnabled" Value="True" />
+                            <Setter Property="ToolTipService.ShowOnDisabled" Value="True" />
+                        </Style>
+                    </syncfusion:GridTextColumn.CellStyle>
+                </syncfusion:GridTextColumn>
+                <syncfusion:GridNumericColumn MappingName="Freight" />
+                <syncfusion:GridCheckBoxColumn HeaderText="Closed" MappingName="IsClosed" />
+            </syncfusion:SfDataGrid.Columns>
+        </syncfusion:SfDataGrid>
+    </Grid>
+</Window>
