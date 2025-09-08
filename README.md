@@ -1,6 +1,6 @@
 # How to show tooltip on the disabled cell in WPF DataGrid?
 
-in [WPF DataGrid](https://www.syncfusion.com/wpf-ui-controls/datagrid) (SfDataGrid), you can show tooltip for the disabled [GridCell](http://help.syncfusion.com/cr/cref_files/wpf/Syncfusion.SfGrid.WPF~Syncfusion.UI.Xaml.Grid.GridCell.html) by writing style and enabling [ToolTipService.ShowOnDisabled](https://docs.microsoft.com/en-us/dotnet/api/system.windows.controls.tooltipservice.showondisabled?view=netframework-4.7.2).
+In [WPF DataGrid](https://www.syncfusion.com/wpf-ui-controls/datagrid) (SfDataGrid), you can show tooltip for the disabled [GridCell](http://help.syncfusion.com/cr/cref_files/wpf/Syncfusion.SfGrid.WPF~Syncfusion.UI.Xaml.Grid.GridCell.html) by writing style and enabling [ToolTipService.ShowOnDisabled](https://docs.microsoft.com/en-us/dotnet/api/system.windows.controls.tooltipservice.showondisabled?view=netframework-4.7.2).
 
 ```xml
 <syncfusion:SfDataGrid x:Name="dataGrid"
